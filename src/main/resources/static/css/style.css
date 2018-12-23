@@ -1,0 +1,67 @@
+.enabled {
+	background-color: #EAFFC8; !important;
+	color: #469400; !important;
+}
+
+.disabled {
+	background-color: #FFCEC8; !important;
+	color: #A62D00; !important;
+}
+
+.pingit {
+	background-color: #E5CDFF; !important;
+	color: black; !important;
+}
+
+.input {
+	background-color: #555555;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+input.knopka {
+	color: black;
+	background: #e7e7e7;
+	border-radius: 5px;
+	border: 1px solid white;
+}
+input.knopka:hover {
+	color: white;
+	background: #469400;
+}
+
+.login-container{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.login-form-1{
+	padding: 9%;
+	background:#282726;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.btnSubmit{
+	font-weight: 600;
+	width: 50%;
+	color: #282726;
+	background-color: #fff;
+	border: none;
+	border-radius: 1.5rem;
+	padding:2%;
+}
+.body {
+	background-color: black;
+}
+
+.body-login {
+	background-color: #EAFFC8;
+}
+
+.white {
+	color: white;
+}

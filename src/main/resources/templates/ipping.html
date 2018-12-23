@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>IP-адреса</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+
+</head>
+<body class="body">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading white" align="center">All available addresses</div>
+                <div class="panel-body">
+                    <table class="table table-dark">
+                        <thead class="table-dark">
+                        <tr>
+                            <th>Ping it</th>
+                            <th>Ip-address</th>
+                            <th>Server</th>
+                            <th>Wher is</th>
+                            <th>Owner</th>
+                        </tr>
+                        </thead>
+                        <tr th:name="addresses" th:each="address : ${ipaddresses}">
+                            <td><input class="knopka" type="submit" name="submit" value="ping" th:onclick="'javascript:ping(\'' + ${address.ip} + '\');'"/></td>
+                            <td th:name="ip" th:id="ip" th:text="${address.ip}"></td>
+                            <td th:id="server" th:text="${address.server}"></td>
+                            <td th:id="address" th:text="${address.address}"></td>
+                            <td th:id="owner" th:text="${address.owner}"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="circle-ripple"></div>
+
+<script type="text/javascript">
+    document.getElementsByName("addresses").forEach(function (value) {
+        var ip = value.childNodes[3].textContent;
+        var url = 'ip=' + ip;
+        $.ajax({
+            url: '/ping',             // указываем URL и
+            dataType : "json",                     // тип загружаемых данных
+            data: url,
+            success: function (data) { // вешаем свой обработчик на функцию success
+                if (data == true) {
+                    value.className = 'enabled';
+                } else if (data == false) {
+                    value.className = 'disabled';
+                }
+            }
+        });
+    });
+
+</script>
+<script type="text/javascript">
+    var el = null;
+    function ping(ip) {
+        document.getElementsByName('addresses').forEach(function (value) {
+            if (ip == value.childNodes[3].textContent) {
+                el = value;
+            }
+        });
+        el.className = 'pingit';
+        var url = 'ip=' + ip;
+        $.ajax({
+            url: '/ping',
+            dataType : "json",
+            data: url,
+            success: function (data) {
+                if (data == true) {
+                    el.className = 'enabled';
+                } else if (data == false) {
+                    el.className = 'disabled';
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
