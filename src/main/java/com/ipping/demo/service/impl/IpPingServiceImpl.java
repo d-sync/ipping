@@ -12,6 +12,25 @@ import java.util.concurrent.TimeUnit;
 public class IpPingServiceImpl extends CommonServiceImpl<IpAddress> implements IpPingService {
 
     private final static String pingCommand = "ping %s";
+    
+    private static String succesMessage;
+    
+    private static String timeoutMessage;
+    
+    static {
+        switch (System.getProperty("os.name")) {
+            case "Windows 10" : {
+                succesMessage = "Reply from";
+                timeoutMessage = "Destination host unreachable";
+                break;
+            }
+            default: {
+                succesMessage = "64 bytes from";
+                timeoutMessage = "Request timeout for";
+                break;
+            }
+        }
+    }
 
     @Autowired
     private IpPingService ipPingService;
@@ -38,9 +57,9 @@ public class IpPingServiceImpl extends CommonServiceImpl<IpAddress> implements I
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
         while ((line = in.readLine()) != null) {
             result.append(line);
-            if (result.toString().contains("Request timeout for")) {
+            if (result.toString().contains(timeoutMessage)) {
                 return false;
-            } else if (result.toString().contains("64 bytes from")) {
+            } else if (result.toString().contains(succesMessage)) {
                 return true;
             }
         }

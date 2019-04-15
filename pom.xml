@@ -19,24 +19,24 @@
     </parent>
 
     <properties>
-        <properties>
-            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-            <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-            <java.version>1.8</java.version>
-            <thymeleaf.version>2.1.3.RELEASE</thymeleaf.version>
-            <thymeleaf.java8time.version>2.1.0.RELEASE</thymeleaf.java8time.version>
-            <guava.version>21.0</guava.version>
-            <!--<mysql-connector-java.version>5.1.39</mysql-connector-java.version>-->
-            <mysql-connector-java.version>5.1.46</mysql-connector-java.version>
-            <jquery.version>3.2.1</jquery.version>
-            <bootstrap.version>3.3.7</bootstrap.version>
-            <jquery-ui.version>1.12.1</jquery-ui.version>
-            <httpclient.version>4.5.5</httpclient.version>
-            <apache.commons.io.version>2.4</apache.commons.io.version>
-            <commons-lang3.version>3.7</commons-lang3.version>
-            <logback.version>1.2.3</logback.version>
-            <fasterxml.jackson.version>2.9.6</fasterxml.jackson.version>
-        </properties>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <thymeleaf.version>2.1.3.RELEASE</thymeleaf.version>
+        <thymeleaf.java8time.version>2.1.0.RELEASE</thymeleaf.java8time.version>
+        <guava.version>21.0</guava.version>
+        <!--<mysql-connector-java.version>5.1.39</mysql-connector-java.version>-->
+        <mysql-connector-java.version>5.1.46</mysql-connector-java.version>
+        <jquery.version>3.2.1</jquery.version>
+        <bootstrap.version>3.3.7</bootstrap.version>
+        <jquery-ui.version>1.12.1</jquery-ui.version>
+        <httpclient.version>4.5.5</httpclient.version>
+        <apache.commons.io.version>2.4</apache.commons.io.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
+        <logback.version>1.2.3</logback.version>
+        <fasterxml.jackson.version>2.9.6</fasterxml.jackson.version>
+
     </properties>
 
     <dependencies>
@@ -83,11 +83,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-connector-java.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-email</artifactId>
-            <version>${commons-email.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.commons</groupId>-->
+            <!--<artifactId>commons-email</artifactId>-->
+            <!--<version>${commons-email.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
@@ -134,6 +134,25 @@
             <artifactId>thymeleaf-extras-springsecurity4</artifactId>
             <version>2.1.3.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.radvision.iview</groupId>
+            <artifactId>revcs-core</artifactId>
+            <version>8.2.0-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.radvision.iview</groupId>
+            <artifactId>pmgr-admin-schema-bindings</artifactId>
+            <version>8.2.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <version>5.0.7.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

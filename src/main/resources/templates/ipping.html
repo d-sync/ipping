@@ -50,13 +50,22 @@
             dataType : "json",                     // тип загружаемых данных
             data: url,
             success: function (data) { // вешаем свой обработчик на функцию success
-                if (data == true) {
+                if (data) {
                     value.className = 'enabled';
-                } else if (data == false) {
+                    $.ajax({
+                        url: '/version',
+                        dataType : "json",
+                        data: url,
+                        success: function (data) {
+                            console.log(data)
+                        }
+                    });
+                } else {
                     value.className = 'disabled';
                 }
             }
         });
+        
     });
 
 </script>
@@ -75,9 +84,9 @@
             dataType : "json",
             data: url,
             success: function (data) {
-                if (data == true) {
+                if (data) {
                     el.className = 'enabled';
-                } else if (data == false) {
+                } else {
                     el.className = 'disabled';
                 }
             }

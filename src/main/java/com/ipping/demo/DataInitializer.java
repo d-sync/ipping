@@ -49,21 +49,22 @@ public class DataInitializer {
     }
 
     private void initIpAddresses() {
-        ipPingService.add(new IpAddress("192.168.127.215", "iView", "computer-127.68","dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.google.com", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("192.168.127.217", "portal", "esxi-127.253", "gloprev@merann.ru"));
-        ipPingService.add(new IpAddress("192.168.127.218", "iView", "computer-143.58", "kkarim@merann.ru"));
-        ipPingService.add(new IpAddress("www.ya.ru", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.mail.ru", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.yahoo.com", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.ahfasohf.com", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.facebook.com", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.vk.com", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.stackoverflow.com", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.github.com", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.bitbucket.com", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("www.dpkgkgpk34.com", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
-        ipPingService.add(new IpAddress("127.0.0.1", "AMS", "esxi-127.253", "dmrybach@merann.ru"));
+        ipPingService.add(new IpAddress("192.168.127.215", "iView-OTT", "192.168.127.253","dmrybach@merann.ru"));
+        ipPingService.add(new IpAddress("192.168.127.216", "esxi", "192.168.127.216", "kulkov@mera.ru"));
+        ipPingService.add(new IpAddress("192.168.127.217", "esxi", "192.168.127.217", "kulkov@mera.ru"));
+        ipPingService.add(new IpAddress("192.168.127.236", "iView", "192.168.128.243", "loparev@mera.ru"));
+        
+        ipPingService.add(new IpAddress("192.168.127.237", "unknown", "unknown", "unknown"));
+        ipPingService.add(new IpAddress("192.168.127.239", "MCU/AAMS", "192.168.128.243", "loparev@mera.ru"));
+        ipPingService.add(new IpAddress("192.168.127.221", "unknown", "unknown", "unknown"));
+        ipPingService.add(new IpAddress("192.168.127.222", "unknown", "unknown", "unknown"));
+        ipPingService.add(new IpAddress("192.168.127.223", "unknown", "unknown", "unknown"));
+        ipPingService.add(new IpAddress("192.168.127.224", "unknown", "unknown", "unknown"));
+        ipPingService.add(new IpAddress("192.168.127.225", "unknown", "unknown", "unknown"));
+        ipPingService.add(new IpAddress("192.168.127.226", "unknown", "unknown", "unknown"));
+        ipPingService.add(new IpAddress("192.168.127.227", "unknown", "unknown", "unknown"));
+        ipPingService.add(new IpAddress("192.168.127.228", "unknown", "unknown", "unknown"));
+        ipPingService.add(new IpAddress("192.168.127.229", "unknown", "unknown", "unknown"));
     }
 
 }
